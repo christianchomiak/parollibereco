@@ -90,8 +90,6 @@ insulted_speech = 0;
 censored_speech = 1;
 default_speech = 2;
 
-can_people_insult_during_rally = false;
-
 
 for (var r = 0; r &lt; rows; r++)
 {

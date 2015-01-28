@@ -18,16 +18,20 @@
   <scripts name="scripts">
     <script>scripts\scr_create_person.gml</script>
     <script>scripts\scr_set_person_speech.gml</script>
-    <script>scripts\scr_rally.gml</script>
+    <script>scripts\scr_execute_censorship.gml</script>
+    <script>scripts\scr_execute_insult.gml</script>
     <script>scripts\scr_set_person_color.gml</script>
     <script>scripts\scr_set_person_info.gml</script>
     <script>scripts\scr_set_person_name.gml</script>
     <script>scripts\scr_reset_person.gml</script>
     <script>scripts\scr_censor_person.gml</script>
+    <script>scripts\scr_make_person_rally.gml</script>
     <script>scripts\scr_insult_person.gml</script>
     <script>scripts\scr_get_random_person_color.gml</script>
     <script>scripts\scr_get_random_person_speech.gml</script>
+    <script>scripts\scr_DeltaTime.gml</script>
   </scripts>
+  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\obj_avatar</object>
     <object>objects\obj_bubble</object>
