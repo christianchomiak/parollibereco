@@ -7,16 +7,21 @@ argument1 -- will be the same person?
 var person = argument0;
 var isDifferentPerson = argument1;
 
-person.isInsulting = false;
+
+scr_set_person_state(person, -1);
+
+/*person.isInsulting = false;
 person.isCensored = false;
 person.isRallying = false;
 
 person.NumberOfSecondsInsulted = 0;
 person.NumbersOfSecondsCensored = 0;
-person.NumbersOfSecondsRallying = 0;
+person.NumbersOfSecondsRallying = 0;*/
+
 person.NumberOfSecondsLived = 0;
 
 person.speech.image_index = scr_get_random_person_speech(); //global.manager.default_speech;
+person.speech.image_alpha = 1;
 
 if isDifferentPerson
 {

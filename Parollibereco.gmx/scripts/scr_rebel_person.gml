@@ -6,7 +6,7 @@ argument0 -- the person reference
 var person = argument0;
 
 
-scr_set_person_state(person, 1);
+scr_set_person_state(person, 3);
 
 /*person.isInsulting = false;
 person.isCensored = true;
@@ -16,5 +16,5 @@ person.NumberOfSecondsInsulted = 0;
 person.NumbersOfSecondsCensored = 0;
 person.NumbersOfSecondsRallying = 0;*/
 
-person.speech.image_index = global.manager.censored_speech;
+person.speech.image_index = global.manager.rebellion_speech;
 person.speech.image_alpha = 1;

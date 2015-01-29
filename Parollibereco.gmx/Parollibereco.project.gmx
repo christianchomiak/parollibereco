@@ -18,6 +18,7 @@
     <sprite>sprites\spr_speech</sprite>
     <sprite>sprites\spr_Bubble2</sprite>
     <sprite>sprites\spr_person_mask</sprite>
+    <sprite>sprites\spr_NewBubble</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -25,19 +26,24 @@
     <script>scripts\scr_create_person.gml</script>
     <script>scripts\scr_set_person_speech.gml</script>
     <script>scripts\scr_execute_censorship.gml</script>
+    <script>scripts\scr_execute_rebellion.gml</script>
     <script>scripts\scr_execute_insult.gml</script>
     <script>scripts\scr_set_person_color.gml</script>
     <script>scripts\scr_set_person_info.gml</script>
     <script>scripts\scr_set_person_name.gml</script>
     <script>scripts\scr_reset_person.gml</script>
     <script>scripts\scr_censor_person.gml</script>
-    <script>scripts\scr_make_person_rally.gml</script>
+    <script>scripts\scr_rebel_person.gml</script>
+    <script>scripts\scr_rally_person.gml</script>
     <script>scripts\scr_insult_person.gml</script>
     <script>scripts\scr_get_random_person_color.gml</script>
     <script>scripts\scr_get_random_person_speech.gml</script>
-    <script>scripts\scr_DeltaTime.gml</script>
+    <script>scripts\scr_get_delta_time.gml</script>
     <script>scripts\scr_count_censored_people.gml</script>
+    <script>scripts\scr_check_if_rebelling_people.gml</script>
+    <script>scripts\scr_set_person_state.gml</script>
   </scripts>
+  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\obj_avatar</object>
     <object>objects\obj_bubble</object>

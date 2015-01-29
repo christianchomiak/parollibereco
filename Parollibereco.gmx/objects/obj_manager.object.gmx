@@ -70,7 +70,7 @@ surface_resize(application_surface, screen_width, screen_height);
 global.manager = id;
 
 rows = 2;
-columns = 4;
+columns = 3;
 
 table_width = 1 * room_width;
 table_height = 1 * room_height;
@@ -79,8 +79,8 @@ person_width = table_width / columns;
 person_height = table_height / rows;
 
 avatar_height = 0.5 * person_height;
-bubble_height = 0.5 * person_height;
-speech_height = 0.4 * person_height;
+bubble_height = 0.45 * person_height;
+speech_height = 0.35 * person_height;
 
 //show_message("W: " + string(person_width) + "H: " + string(person_height) );
 
@@ -88,7 +88,10 @@ person_depth = 0;
 
 insulted_speech = 0;
 censored_speech = 1;
-default_speech = 2;
+rebellion_speech = 2;
+default_speech = 3;
+
+max_number_of_censorships = (rows * columns) * 0.5;
 
 
 for (var r = 0; r &lt; rows; r++)
@@ -110,8 +113,45 @@ audio_sound_gain(BGM, 0.25, 0);
 
 
 SFX = audio_play_sound(sfx_Normal, 0.5, true);
-audio_sound_gain(SFX, 0.075, 0);
+audio_sound_gain(SFX, 0.15, 0);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var numberOfCensoredPeople = scr_count_censored_people();
+
+if numberOfCensoredPeople == 0 &amp;&amp; scr_check_if_rebelling_people() == false
+{
+    if audio_is_playing(sfx_Angry)
+    {    
+        audio_stop_sound(sfx_Angry);    
+        //SFX = audio_play_sound(sfx_Normal, 0.5, true);
+        //audio_sound_gain(SFX, 0.075, 0);
+    }
+}
+else if numberOfCensoredPeople &gt;= max_number_of_censorships
+{
+    scr_execute_rebellion();
+}
 </string>
           </argument>
         </arguments>

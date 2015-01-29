@@ -5,12 +5,16 @@ argument0 -- the person reference
 
 var person = argument0;
 
-person.isInsulting = true;
+
+scr_set_person_state(person, 0);
+
+/*person.isInsulting = true;
 person.isCensored = false;
 person.isRallying = false;
 
 person.NumberOfSecondsInsulted = 0;
 person.NumbersOfSecondsCensored = 0;
-person.NumbersOfSecondsRallying = 0;
+person.NumbersOfSecondsRallying = 0;*/
 
 person.speech.image_index = global.manager.insulted_speech;
+person.speech.image_alpha = 1;

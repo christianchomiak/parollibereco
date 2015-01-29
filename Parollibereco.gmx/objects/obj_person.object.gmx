@@ -31,14 +31,17 @@ NumberOfSecondsLived = 0;
 isInsulting = false;
 isCensored = false;
 isRallying = false;
+isRebelling = false;
 
 MaxNumberOfSecondsInsulted = random_range(3, 10);
 MaxNumbersOfSecondsCensored = random_range(5, 10);
 MaxNumbersOfSecondsRallying = random_range(3, 10);
+MaxNumbersOfSecondsRebelling = random_range(10, 20);
 
 NumberOfSecondsInsulted = 0;
 NumbersOfSecondsCensored = 0;
 NumbersOfSecondsRallying = 0;
+NumbersOfSecondsRebelling = 0;
 
 
 //var avatar;
@@ -54,9 +57,19 @@ bubble.depth = 1;
 bubble.image_speed = 0;
 bubble.image_xscale = global.manager.bubble_height / sprite_get_height(spr_Bubble2); // 0.9;
 bubble.image_yscale = global.manager.bubble_height / sprite_get_height(spr_Bubble2); // 1.1;
+bubble.image_alpha = 0.25;
+
+
+/*
+bubble = instance_create(x + (global.manager.person_width / 2), y + (global.manager.person_height * 0.25), obj_bubble);
+bubble.depth = 1;
+bubble.image_speed = 0;
+bubble.image_xscale = global.manager.bubble_height / sprite_get_height(spr_Bubble2); // 0.9;
+bubble.image_yscale = global.manager.bubble_height / sprite_get_height(spr_Bubble2); // 1.1;
+*/
 
 //var speech;
-speech = instance_create(bubble.x, y + (global.manager.person_height * 0.19) , obj_speech);
+speech = instance_create(bubble.x, bubble.y , obj_speech); // y + (global.manager.person_height * 0.19)
 speech.depth = 0;
 speech.image_speed = 0;
 speech.image_index = 0;
@@ -87,7 +100,7 @@ speech.image_yscale = global.manager.speech_height / sprite_get_height(spr_speec
             <kind>1</kind>
             <string>if isInsulting
 {
-    NumberOfSecondsInsulted += scr_DeltaTime();
+    NumberOfSecondsInsulted += scr_get_delta_time();
     
     if NumberOfSecondsInsulted &gt;= MaxNumberOfSecondsInsulted
     {
@@ -97,25 +110,17 @@ speech.image_yscale = global.manager.speech_height / sprite_get_height(spr_speec
 }
 else if isCensored
 {
-    NumbersOfSecondsCensored += scr_DeltaTime();
+    NumbersOfSecondsCensored += scr_get_delta_time();
     
     if NumbersOfSecondsCensored &gt;= MaxNumbersOfSecondsCensored
     {
         //NumberOfSecondsInsulted = 0;
         scr_reset_person(self.id, false);
-        
-        if scr_count_censored_people() == 0
-        {            
-            audio_stop_sound(sfx_Angry);
-        
-            global.manager.SFX = audio_play_sound(sfx_Normal, 0.5, true);
-            audio_sound_gain(global.manager.SFX, 0.075, 0);
-        }
     }
 }
 else if isRallying
 {
-    NumbersOfSecondsRallying += scr_DeltaTime();
+    NumbersOfSecondsRallying += scr_get_delta_time();
     
     if NumbersOfSecondsRallying &gt;= MaxNumbersOfSecondsRallying
     {
@@ -123,9 +128,21 @@ else if isRallying
         scr_reset_person(self.id, false);
     }
 }
+else if isRebelling
+{
+    NumbersOfSecondsRebelling += scr_get_delta_time();
+    
+    if NumbersOfSecondsRebelling &gt;= MaxNumbersOfSecondsRebelling
+    {
+        //NumberOfSecondsInsulted = 0;
+        scr_reset_person(self.id, true);
+    }
+}
 else
 {
-    NumberOfSecondsLived += scr_DeltaTime();
+    NumberOfSecondsLived += scr_get_delta_time();
+    
+    speech.image_alpha = 1 - NumberOfSecondsLived / MaxNumbersOfSecondsToLive;
     
     if NumberOfSecondsLived &gt;= MaxNumbersOfSecondsToLive
     {
@@ -156,7 +173,12 @@ else
           <argument>
             <kind>1</kind>
             <string>//We can censor the person anytime, unless it is already censored
-if (!isCensored)
+
+if (isRebelling)
+{
+    show_message("RIGHT: " + string(name) + " is rebelling");
+}
+else if (!isCensored) // &amp;&amp; !isRebelling)
 {
     //The person is censored and others reply as they see fit
     scr_execute_censorship(id, speech.image_index); //, global.manager.can_people_insult_during_rally);
@@ -190,7 +212,16 @@ else
           <argument>
             <kind>1</kind>
             <string>// We can insult the person anytime, unless it is already insulting or censored
-if (!isInsulting &amp;&amp; !isCensored)
+
+if (isCensored)
+{
+    show_message("LEFT: " + string(name) + " is censored");
+}
+else if (isRebelling)
+{
+    show_message("LEFT: " + string(name) + " is rebelling");
+}
+else if (!isInsulting)
 {
     //The person responds to our insults
     scr_execute_insult(self.id);
