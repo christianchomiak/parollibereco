@@ -70,7 +70,7 @@ surface_resize(application_surface, screen_width, screen_height);
 global.manager = id;
 
 rows = 2;
-columns = 3;
+columns = 4;
 
 table_width = 1 * room_width;
 table_height = 1 * room_height;
@@ -81,6 +81,7 @@ person_height = table_height / rows;
 avatar_height = 0.5 * person_height;
 bubble_height = 0.45 * person_height;
 speech_height = 0.35 * person_height;
+negate_height = 0.375 * person_height;
 
 //show_message("W: " + string(person_width) + "H: " + string(person_height) );
 
@@ -108,11 +109,11 @@ for (var r = 0; r &lt; rows; r++)
     }
 }
 
-var BGM = audio_play_sound(bgm_Air, 1, true);
+var BGM = audio_play_sound(bgm_air, 1, true);
 audio_sound_gain(BGM, 0.25, 0);
 
 
-SFX = audio_play_sound(sfx_Normal, 0.5, true);
+SFX = audio_play_sound(sfx_ambience, 0.5, true);
 audio_sound_gain(SFX, 0.15, 0);
 
 </string>
@@ -141,9 +142,9 @@ audio_sound_gain(SFX, 0.15, 0);
 
 if numberOfCensoredPeople == 0 &amp;&amp; scr_check_if_rebelling_people() == false
 {
-    if audio_is_playing(sfx_Angry)
+    if audio_is_playing(sfx_angry)
     {    
-        audio_stop_sound(sfx_Angry);    
+        audio_stop_sound(sfx_angry);    
         //SFX = audio_play_sound(sfx_Normal, 0.5, true);
         //audio_sound_gain(SFX, 0.075, 0);
     }

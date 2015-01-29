@@ -68,7 +68,7 @@
     <option_changeresolution>false</option_changeresolution>
     <option_closeesc>true</option_closeesc>
     <option_colordepth>0</option_colordepth>
-    <option_display_name>GameMaker: Studio</option_display_name>
+    <option_display_name>Parollibereco</option_display_name>
     <option_displayerrors>True</option_displayerrors>
     <option_facebook_app_display_name></option_facebook_app_display_name>
     <option_facebook_appid></option_facebook_appid>
@@ -287,7 +287,7 @@
     <option_version>100</option_version>
     <option_version_build>0</option_version_build>
     <option_version_company></option_version_company>
-    <option_version_copyright></option_version_copyright>
+    <option_version_copyright>(c)2015 Christian Chomiak</option_version_copyright>
     <option_version_description></option_version_description>
     <option_version_major>1</option_version_major>
     <option_version_minor>0</option_version_minor>
@@ -331,7 +331,7 @@
     <option_windowcolor>clBlack</option_windowcolor>
     <option_windows_build_version>0</option_windows_build_version>
     <option_windows_company_info></option_windows_company_info>
-    <option_windows_copyright_info></option_windows_copyright_info>
+    <option_windows_copyright_info>(c)2015 Christian Chomiak</option_windows_copyright_info>
     <option_windows_description_info></option_windows_description_info>
     <option_windows_enable_steam>0</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>

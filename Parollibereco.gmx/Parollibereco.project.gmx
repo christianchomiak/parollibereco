@@ -5,17 +5,16 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\sfx_Normal</sound>
-    <sound>sound\bgm_Air</sound>
-    <sound>sound\sfx_Angry</sound>
-    <sound>sound\sfx_fckU</sound>
-    <sound>sound\sfx_Fck_U_2</sound>
+    <sound>sound\bgm_air</sound>
+    <sound>sound\sfx_ambience</sound>
+    <sound>sound\sfx_angry</sound>
+    <sound>sound\sfx_insult</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_avatarTest1</sprite>
     <sprite>sprites\spr_avatarTest2</sprite>
-    <sprite>sprites\spr_Bubble</sprite>
     <sprite>sprites\spr_speech</sprite>
+    <sprite>sprites\spr_speech_bu</sprite>
     <sprite>sprites\spr_Bubble2</sprite>
     <sprite>sprites\spr_person_mask</sprite>
     <sprite>sprites\spr_NewBubble</sprite>
@@ -43,7 +42,6 @@
     <script>scripts\scr_check_if_rebelling_people.gml</script>
     <script>scripts\scr_set_person_state.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\obj_avatar</object>
     <object>objects\obj_bubble</object>

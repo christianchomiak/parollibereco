@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MaxNumbersOfSecondsToLive = random_range(2, 7);
+            <string>MaxNumbersOfSecondsToLive = random_range(3, 10);
 NumberOfSecondsLived = 0;
 
 isInsulting = false;
@@ -115,7 +115,7 @@ else if isCensored
     if NumbersOfSecondsCensored &gt;= MaxNumbersOfSecondsCensored
     {
         //NumberOfSecondsInsulted = 0;
-        scr_reset_person(self.id, false);
+        scr_reset_person(self.id, true);
     }
 }
 else if isRallying
@@ -176,18 +176,18 @@ else
 
 if (isRebelling)
 {
-    show_message("RIGHT: " + string(name) + " is rebelling");
+    //show_message("RIGHT: " + string(name) + " is rebelling");
 }
 else if (!isCensored) // &amp;&amp; !isRebelling)
 {
     //The person is censored and others reply as they see fit
     scr_execute_censorship(id, speech.image_index); //, global.manager.can_people_insult_during_rally);
-    show_message("RIGHT: " + string(name));
+    //show_message("RIGHT: " + string(name));
 }
 else
 {
     //The person is already censored. Do nothing.
-    show_message("RIGHT: " + string(name) + " already censored");
+    //show_message("RIGHT: " + string(name) + " already censored");
 }
 </string>
           </argument>
@@ -215,23 +215,23 @@ else
 
 if (isCensored)
 {
-    show_message("LEFT: " + string(name) + " is censored");
+    //show_message("LEFT: " + string(name) + " is censored");
 }
 else if (isRebelling)
 {
-    show_message("LEFT: " + string(name) + " is rebelling");
+    //show_message("LEFT: " + string(name) + " is rebelling");
 }
 else if (!isInsulting)
 {
     //The person responds to our insults
     scr_execute_insult(self.id);
-    show_message("LEFT: " + string(name));
+    //show_message("LEFT: " + string(name));
 }
 else if (isInsulting)
 {
     //The person is already insulting. Do nothing.
 
-    show_message("LEFT: " + string(name) + " already insulting");
+    //show_message("LEFT: " + string(name) + " already insulting");
 }
 </string>
           </argument>
