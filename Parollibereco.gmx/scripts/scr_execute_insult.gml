@@ -11,6 +11,9 @@ var totalNumberOfPeople = global.manager.rows * global.manager.columns;
 var percentageOfPeopleThatWillInsultInResponse = 0.25; // irandom_range(0, totalNumberOfPeople - 1) / totalNumberOfPeople;
 percentageOfPeopleThatWillInsultInResponse = max(0, percentageOfPeopleThatWillInsultInResponse);
 
+var sfx = audio_play_sound(sfx_Fck_U_2, 1, false);
+audio_sound_pitch(sfx, 1); 
+
 for (var i = 0; i < global.manager.rows; i++)
 {
     for (var j = 0; j < global.manager.columns; j++)
@@ -20,7 +23,13 @@ for (var i = 0; i < global.manager.rows; i++)
         {
             scr_insult_person(personThatWasInsulted);
             continue;
-        }            
+        }        
+        
+        //Dead men tell no tales
+        if global.manager.people[i, j].isCensored
+        {
+            continue;
+        }
         
         //Will this person insult in response to the censoring?
         if random(1) <= percentageOfPeopleThatWillInsultInResponse

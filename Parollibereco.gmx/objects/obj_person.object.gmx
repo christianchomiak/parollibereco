@@ -103,6 +103,14 @@ else if isCensored
     {
         //NumberOfSecondsInsulted = 0;
         scr_reset_person(self.id, false);
+        
+        if scr_count_censored_people() == 0
+        {            
+            audio_stop_sound(sfx_Angry);
+        
+            global.manager.SFX = audio_play_sound(sfx_Normal, 0.5, true);
+            audio_sound_gain(global.manager.SFX, 0.075, 0);
+        }
     }
 }
 else if isRallying

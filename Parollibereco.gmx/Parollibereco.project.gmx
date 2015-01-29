@@ -4,7 +4,13 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sfx_Normal</sound>
+    <sound>sound\bgm_Air</sound>
+    <sound>sound\sfx_Angry</sound>
+    <sound>sound\sfx_fckU</sound>
+    <sound>sound\sfx_Fck_U_2</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_avatarTest1</sprite>
     <sprite>sprites\spr_avatarTest2</sprite>
@@ -30,8 +36,8 @@
     <script>scripts\scr_get_random_person_color.gml</script>
     <script>scripts\scr_get_random_person_speech.gml</script>
     <script>scripts\scr_DeltaTime.gml</script>
+    <script>scripts\scr_count_censored_people.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\obj_avatar</object>
     <object>objects\obj_bubble</object>

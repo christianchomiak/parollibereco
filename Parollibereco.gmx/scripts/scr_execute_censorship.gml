@@ -13,6 +13,18 @@ var totalNumberOfPeople = global.manager.rows * global.manager.columns;
 var percentageOfPeopleThatWillInsultInResponse = irandom_range(0, totalNumberOfPeople - 1) / totalNumberOfPeople;
 percentageOfPeopleThatWillInsultInResponse = max(0, percentageOfPeopleThatWillInsultInResponse);
 
+if !audio_is_playing(sfx_Angry) 
+{
+    //audio_stop_sound(global.manager.SFX);
+    global.manager.SFX = audio_play_sound(sfx_Angry, 1, true);
+    audio_sound_gain(global.manager.SFX, 0.25, 0);
+}
+else
+{    
+    audio_sound_gain(global.manager.SFX, audio_sound_get_gain(global.manager.SFX) + 0.25, 0);
+}
+
+
 for (var i = 0; i < global.manager.rows; i++)
 {
     for (var j = 0; j < global.manager.columns; j++)

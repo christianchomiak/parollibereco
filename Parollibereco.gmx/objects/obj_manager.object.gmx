@@ -70,7 +70,7 @@ surface_resize(application_surface, screen_width, screen_height);
 global.manager = id;
 
 rows = 2;
-columns = 3;
+columns = 4;
 
 table_width = 1 * room_width;
 table_height = 1 * room_height;
@@ -104,6 +104,14 @@ for (var r = 0; r &lt; rows; r++)
         scr_set_person_info(people[r, c], person_name, person_color, person_speech);
     }
 }
+
+var BGM = audio_play_sound(bgm_Air, 1, true);
+audio_sound_gain(BGM, 0.25, 0);
+
+
+SFX = audio_play_sound(sfx_Normal, 0.5, true);
+audio_sound_gain(SFX, 0.075, 0);
+
 </string>
           </argument>
         </arguments>
