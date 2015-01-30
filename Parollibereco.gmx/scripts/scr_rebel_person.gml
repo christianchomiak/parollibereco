@@ -19,4 +19,4 @@ person.NumbersOfSecondsRallying = 0;*/
 person.speech.image_index = global.manager.rebellion_speech;
 person.speech.image_alpha = 1;
 
-person.avatar.image_blend = person.CurrentColor;
+person.avatar.image_blend = person.UnselectedColor;

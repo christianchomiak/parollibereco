@@ -35,7 +35,7 @@ isRebelling = false;
 
 MaxNumberOfSecondsInsulted = random_range(3, 10);
 MaxNumbersOfSecondsCensored = random_range(5, 10);
-MaxNumbersOfSecondsRallying = random_range(3, 10);
+MaxNumbersOfSecondsRallying = random_range(5, 15);
 MaxNumbersOfSecondsRebelling = random_range(10, 20);
 
 NumberOfSecondsInsulted = 0;
@@ -49,7 +49,10 @@ avatar.depth = 0;
 avatar.image_speed = 0;
 avatar.image_xscale = global.manager.avatar_height / sprite_get_height(spr_avatarTest2);
 avatar.image_yscale = global.manager.avatar_height / sprite_get_height(spr_avatarTest2);
+//avatar.image_blend = UnselectedColor;
+
 scr_set_person_color(self.id, scr_get_random_person_color());
+CensoredColor = c_gray;
 
 //var bubble;
 bubble = instance_create(x + (global.manager.person_width / 2), y + (global.manager.person_height * 0.25), obj_bubble);
@@ -59,14 +62,6 @@ bubble.image_xscale = global.manager.bubble_height / sprite_get_height(spr_Bubbl
 bubble.image_yscale = global.manager.bubble_height / sprite_get_height(spr_Bubble2); // 1.1;
 bubble.image_alpha = 0.25;
 
-
-/*
-bubble = instance_create(x + (global.manager.person_width / 2), y + (global.manager.person_height * 0.25), obj_bubble);
-bubble.depth = 1;
-bubble.image_speed = 0;
-bubble.image_xscale = global.manager.bubble_height / sprite_get_height(spr_Bubble2); // 0.9;
-bubble.image_yscale = global.manager.bubble_height / sprite_get_height(spr_Bubble2); // 1.1;
-*/
 
 //var speech;
 speech = instance_create(bubble.x, bubble.y , obj_speech); // y + (global.manager.person_height * 0.19)
@@ -151,6 +146,59 @@ else
         //NumberOfSecondsInsulted = 0;
         scr_reset_person(self.id, true);
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !isCensored
+    avatar.image_blend = UnselectedColor;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !isCensored
+{
+    //UnselectedColor = scr_get_random_person_color();
+    //SelectedColor = make_colour_hsv(colour_get_hue(avatar.image_blend), 215, 128);
+    
+    avatar.image_blend = SelectedColor;
 }
 </string>
           </argument>

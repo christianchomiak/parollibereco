@@ -67,14 +67,10 @@ surface_resize(application_surface, screen_width, screen_height);
           <argument>
             <kind>1</kind>
             <string>///Game setup
-global.manager = id;
 
-
-var BGM = audio_play_sound(bgm_air, 1, true);
+BGM = audio_play_sound(bgm_air, 1, true);
 audio_sound_gain(BGM, 0.15, 0);
 
-SFX = audio_play_sound(sfx_ambience, 0.5, true);
-audio_sound_gain(SFX, 0.15, 0);
 
 cursor = instance_create(mouse_x, mouse_y, obj_cursor);
 cursor.image_xscale = 1.5;
@@ -82,53 +78,30 @@ cursor.image_yscale = cursor.image_xscale;
 cursor.depth = -5;
 
 
-rows = 2;
-columns = 5;
-
 table_width = 1 * room_width;
 table_height = 1 * room_height;
 
-person_width = table_width / columns;
-person_height = table_height / rows;
+bubble_height = 0.45 * table_height;
+speech_height = 0.35 * table_height;
 
-avatar_height = 0.5 * person_height;
-bubble_height = 0.45 * person_height;
-speech_height = 0.35 * person_height;
-negate_height = 0.375 * person_height;
-
-
-person_depth = 0;
 
 insulted_speech = 0;
 censored_speech = 1;
 rebellion_speech = 2;
 default_speech = 3;
 
-max_number_of_censorships = (rows * columns) * 0.5;
 
-
-for (var r = 0; r &lt; rows; r++)
-{
-    for (var c = 0; c &lt; columns; c++)
-    {
-        people[r, c] = scr_create_person(0, 0, person_width, person_height, person_depth, c, r);
-        
-        var person_name = "P(" + string(c) + ", " + string(r) + ")";
-        scr_set_person_name(people[r, c], person_name);
-        
-        /*var person_name = "P(" + string(c) + ", " + string(r) + ")";
-        var person_color = scr_get_random_person_color();
-        var person_speech = scr_get_random_person_speech();
-        
-        scr_set_person_info(people[r, c], person_name, person_color, person_speech);*/
-    }
-}
+logo = instance_create(room_width * 0.5, room_height * 0.5, obj_logo);
+logo.depth = 0;
+logo.image_speed = 0;
+logo.image_xscale = 0.35 * room_width / sprite_get_width(spr_NewBubble);
+logo.image_yscale = logo.image_xscale;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="9" enumb="27">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -145,27 +118,13 @@ for (var r = 0; r &lt; rows; r++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var numberOfCensoredPeople = scr_count_censored_people();
-
-if numberOfCensoredPeople == 0 &amp;&amp; scr_check_if_rebelling_people() == false
-{
-    if audio_is_playing(sfx_angry)
-    {    
-        audio_stop_sound(sfx_angry);    
-        //SFX = audio_play_sound(sfx_Normal, 0.5, true);
-        //audio_sound_gain(SFX, 0.075, 0);
-    }
-}
-else if numberOfCensoredPeople &gt;= max_number_of_censorships
-{
-    scr_execute_rebellion();
-}
+            <string>game_end();
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="1">
+    <event eventtype="9" enumb="13">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -182,33 +141,28 @@ else if numberOfCensoredPeople &gt;= max_number_of_censorships
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(vk_space)
-{
-    for (var r = 0; r &lt; rows; r++)
-    {
-        for (var c = 0; c &lt; columns; c++)
-        {
-            //var person_name = "P(" + string(r) + ", " + string(c) + ")";
-            //var person_speech = scr_get_random_person_speech();
-            
-            //scr_set_person_info(people[r, c], person_name, person_color, person_speech);
-            //scr_set_person_color(people[r, c], person_color);
-            
-            scr_reset_person(people[r, c], true);
-        }
-    }
-}
-else if keyboard_check_pressed(vk_escape)
-{
-    game_end();
-    //audio_stop_all();
-    //room_goto(0);
-}
-/*else if keyboard_check_pressed(ord('R'))
-{
-    game_restart();
-}*/
+            <string>audio_stop_all();
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>rm_Play</room>
           </argument>
         </arguments>
       </action>

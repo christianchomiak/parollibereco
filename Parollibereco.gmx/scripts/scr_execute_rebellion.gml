@@ -9,6 +9,10 @@ else
     audio_sound_gain(global.manager.SFX, 1, 0);
 }*/
 
+
+var SirenSFX = audio_play_sound(sfx_siren, 1, false);
+audio_sound_gain(SirenSFX, 1, 0);
+
 audio_sound_gain(global.manager.SFX, 1, 0);
 
 for (var i = 0; i < global.manager.rows; i++)

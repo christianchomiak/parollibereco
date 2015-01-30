@@ -5,5 +5,9 @@ argument1 -- the person color
 */
 
 var person = argument0;
-person.avatar.image_blend = argument1;
-person.CurrentColor = argument1;
+var color = argument1;
+
+person.UnselectedColor = color;
+person.SelectedColor = make_colour_hsv(colour_get_hue(color), 64, 64);
+
+person.avatar.image_blend = person.UnselectedColor;

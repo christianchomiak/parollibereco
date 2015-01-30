@@ -30,6 +30,6 @@ if isDifferentPerson
     person.MaxNumbersOfSecondsCensored = random_range(5, 10);
     person.MaxNumbersOfSecondsRallying = random_range(3, 10);
     person.MaxNumbersOfSecondsRebelling = random_range(10, 20);
-
+    
     scr_set_person_color(person, scr_get_random_person_color());
 }

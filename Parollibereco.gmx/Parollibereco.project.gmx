@@ -9,6 +9,7 @@
     <sound>sound\sfx_ambience</sound>
     <sound>sound\sfx_angry</sound>
     <sound>sound\sfx_insult</sound>
+    <sound>sound\sfx_siren</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_avatarTest1</sprite>
@@ -23,36 +24,42 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_censor_person.gml</script>
+    <script>scripts\scr_check_if_rebelling_people.gml</script>
+    <script>scripts\scr_count_censored_people.gml</script>
     <script>scripts\scr_create_person.gml</script>
-    <script>scripts\scr_set_person_speech.gml</script>
     <script>scripts\scr_execute_censorship.gml</script>
-    <script>scripts\scr_execute_rebellion.gml</script>
     <script>scripts\scr_execute_insult.gml</script>
+    <script>scripts\scr_execute_rebellion.gml</script>
+    <script>scripts\scr_get_delta_time.gml</script>
+    <script>scripts\scr_get_random_person_color.gml</script>
+    <script>scripts\scr_get_random_person_speech.gml</script>
+    <script>scripts\scr_insult_person.gml</script>
+    <script>scripts\scr_rally_person.gml</script>
+    <script>scripts\scr_rebel_person.gml</script>
+    <script>scripts\scr_reset_person.gml</script>
     <script>scripts\scr_set_person_color.gml</script>
     <script>scripts\scr_set_person_info.gml</script>
     <script>scripts\scr_set_person_name.gml</script>
-    <script>scripts\scr_reset_person.gml</script>
-    <script>scripts\scr_censor_person.gml</script>
-    <script>scripts\scr_rebel_person.gml</script>
-    <script>scripts\scr_rally_person.gml</script>
-    <script>scripts\scr_insult_person.gml</script>
-    <script>scripts\scr_get_random_person_color.gml</script>
-    <script>scripts\scr_get_random_person_speech.gml</script>
-    <script>scripts\scr_get_delta_time.gml</script>
-    <script>scripts\scr_count_censored_people.gml</script>
-    <script>scripts\scr_check_if_rebelling_people.gml</script>
+    <script>scripts\scr_set_person_speech.gml</script>
     <script>scripts\scr_set_person_state.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_title</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_avatar</object>
     <object>objects\obj_bubble</object>
-    <object>objects\obj_speech</object>
-    <object>objects\obj_person</object>
-    <object>objects\obj_manager</object>
     <object>objects\obj_cursor</object>
+    <object>objects\obj_manager</object>
+    <object>objects\obj_person</object>
+    <object>objects\obj_speech</object>
+    <object>objects\obj_main_menu</object>
+    <object>objects\obj_logo</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Test1</room>
+    <room>rooms\rm_Play</room>
+    <room>rooms\rm_MainMenu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

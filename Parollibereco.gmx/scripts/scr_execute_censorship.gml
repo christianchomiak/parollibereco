@@ -37,7 +37,7 @@ for (var i = 0; i < global.manager.rows; i++)
         }            
         
         //Dead men tell no tales
-        if global.manager.people[i, j].isCensored
+        if global.manager.people[i, j].isCensored || global.manager.people[i, j].isRebelling
         {
             continue;
         }
@@ -45,7 +45,7 @@ for (var i = 0; i < global.manager.rows; i++)
         var probability = random(1);
         
         //Will this person insult in response to the censoring?
-        if probability < 0.25 //percentageOfPeopleThatWillInsultInResponse
+        if probability < 0.15 //percentageOfPeopleThatWillInsultInResponse
         {
             //scr_set_person_speech(global.manager.people[i, j], global.manager.insulted_speech);
             scr_insult_person(global.manager.people[i, j]);
