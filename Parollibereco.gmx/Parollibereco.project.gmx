@@ -20,6 +20,7 @@
     <sprite>sprites\spr_person_mask</sprite>
     <sprite>sprites\spr_NewBubble</sprite>
     <sprite>sprites\spr_cursor</sprite>
+    <sprite>sprites\spr_cursor_bu</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -51,6 +52,7 @@
     <object>objects\obj_avatar</object>
     <object>objects\obj_bubble</object>
     <object>objects\obj_cursor</object>
+    <object>objects\obj_menu_cursor</object>
     <object>objects\obj_manager</object>
     <object>objects\obj_person</object>
     <object>objects\obj_speech</object>
@@ -58,8 +60,8 @@
     <object>objects\obj_logo</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Play</room>
     <room>rooms\rm_MainMenu</room>
+    <room>rooms\rm_Play</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

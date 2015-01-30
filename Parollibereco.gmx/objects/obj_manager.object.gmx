@@ -31,8 +31,8 @@ window_set_fullscreen(false);
 
 
 //How big is the screen?
-screen_width = 800; //display_get_width();
-screen_height = 600; //display_get_height();
+screen_width = 1024; //display_get_width();
+screen_height = 768; //display_get_height();
 
 //Set size of window - not useful when on fullscreen
 window_set_size(screen_width, screen_height);
@@ -85,8 +85,12 @@ cursor.depth = -5;
 rows = 2;
 columns = 5;
 
+startingX = 0;
+startingY = 0.05 * room_height;
+
 table_width = 1 * room_width;
-table_height = 1 * room_height;
+table_height = 0.95 * room_height;
+
 
 person_width = table_width / columns;
 person_height = table_height / rows;
@@ -95,7 +99,6 @@ avatar_height = 0.5 * person_height;
 bubble_height = 0.45 * person_height;
 speech_height = 0.35 * person_height;
 negate_height = 0.375 * person_height;
-
 
 person_depth = 0;
 
@@ -111,7 +114,7 @@ for (var r = 0; r &lt; rows; r++)
 {
     for (var c = 0; c &lt; columns; c++)
     {
-        people[r, c] = scr_create_person(0, 0, person_width, person_height, person_depth, c, r);
+        people[r, c] = scr_create_person(startingX, startingY, person_width, person_height, person_depth, c, r);
         
         var person_name = "P(" + string(c) + ", " + string(r) + ")";
         scr_set_person_name(people[r, c], person_name);
@@ -200,9 +203,13 @@ else if numberOfCensoredPeople &gt;= max_number_of_censorships
 }
 else if keyboard_check_pressed(vk_escape)
 {
-    game_end();
-    //audio_stop_all();
-    //room_goto(0);
+    if false
+        game_end();
+    else
+    {
+        audio_stop_all();
+        room_goto(0);
+    }
 }
 /*else if keyboard_check_pressed(ord('R'))
 {

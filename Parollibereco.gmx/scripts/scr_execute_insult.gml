@@ -12,19 +12,21 @@ var percentageOfPeopleThatWillInsultInResponse = 0.25; // irandom_range(0, total
 percentageOfPeopleThatWillInsultInResponse = max(0, percentageOfPeopleThatWillInsultInResponse);
 
 var sfx = audio_play_sound(sfx_insult, 0.5, false);
-audio_sound_gain(sfx, 0.25, 0);
+audio_sound_gain(sfx, 0.5, 0);
 //audio_sound_pitch(sfx, 1); 
+
+var InsultedSpeech = personThatWasInsulted.speech.image_index;
 
 for (var i = 0; i < global.manager.rows; i++)
 {
     for (var j = 0; j < global.manager.columns; j++)
     {
         //The selected person will be insulted
-        if (personThatWasInsulted == global.manager.people[i,j])
+        if personThatWasInsulted == global.manager.people[i,j]
         {
             scr_insult_person(personThatWasInsulted);
             continue;
-        }        
+        }
         
         //Dead men tell no tales
         if global.manager.people[i, j].isCensored
@@ -32,10 +34,16 @@ for (var i = 0; i < global.manager.rows; i++)
             continue;
         }
         
-        //Will this person insult in response to the censoring?
-        if random(1) <= percentageOfPeopleThatWillInsultInResponse
+        //Only those who share the same message will insult back
+        if global.manager.people[i, j].speech.image_index == InsultedSpeech
         {
             scr_insult_person(global.manager.people[i, j]);
         }
+        
+        //Will this person insult in response to the censoring?
+        /*if random(1) <= percentageOfPeopleThatWillInsultInResponse
+        {
+            scr_insult_person(global.manager.people[i, j]);
+        }*/
     }
 }

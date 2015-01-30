@@ -42,7 +42,7 @@ for (var i = 0; i < global.manager.rows; i++)
             continue;
         }
         
-        var probability = random(1);
+        /*var probability = random(1);
         
         //Will this person insult in response to the censoring?
         if probability < 0.15 //percentageOfPeopleThatWillInsultInResponse
@@ -50,18 +50,19 @@ for (var i = 0; i < global.manager.rows; i++)
             //scr_set_person_speech(global.manager.people[i, j], global.manager.insulted_speech);
             scr_insult_person(global.manager.people[i, j]);
         }
-        /*else if probability < 0.5
+        else if probability < 0.5
         {
             scr_make_person_rally(global.manager.people[i, j], global.manager.rebelion_speech);
-        }*/
+        }
         else
         {
             //scr_set_person_speech(global.manager.people[i, j], speechToBeReplicated);
             scr_rally_person(global.manager.people[i, j], speechToBeReplicated);
-        }
+        }*/
         
-        /*global.manager.people[i, j].isInsulting = true;
-        global.manager.people[i, j].isCensored = false;
-        global.manager.people[i, j].isRallying = false;*/
+        if speechToBeReplicated == global.manager.insulted_speech
+            scr_insult_person(global.manager.people[i, j]);
+        else
+            scr_rally_person(global.manager.people[i, j], speechToBeReplicated);
     }
 }

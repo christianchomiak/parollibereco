@@ -31,8 +31,8 @@ window_set_fullscreen(false);
 
 
 //How big is the screen?
-screen_width = 800; //display_get_width();
-screen_height = 600; //display_get_height();
+screen_width = 1024; //display_get_width();
+screen_height = 768; //display_get_height();
 
 //Set size of window - not useful when on fullscreen
 window_set_size(screen_width, screen_height);
@@ -72,7 +72,7 @@ BGM = audio_play_sound(bgm_air, 1, true);
 audio_sound_gain(BGM, 0.15, 0);
 
 
-cursor = instance_create(mouse_x, mouse_y, obj_cursor);
+cursor = instance_create(mouse_x, mouse_y, obj_menu_cursor);
 cursor.image_xscale = 1.5;
 cursor.image_yscale = cursor.image_xscale;
 cursor.depth = -5;
