@@ -30,7 +30,7 @@ new_instance.image_speed = 0;
 new_instance.col = argument5;
 new_instance.row = argument6;
 
-scr_set_person_info(new_instance, "", scr_get_random_person_color(), scr_get_random_person_speech());
+//scr_set_person_info(new_instance, "", scr_get_random_person_color(), scr_get_random_person_speech());
 
 new_instance.image_xscale = global.manager.person_width;
 new_instance.image_yscale = global.manager.person_height;

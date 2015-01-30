@@ -6,3 +6,4 @@ argument1 -- the person color
 
 var person = argument0;
 person.avatar.image_blend = argument1;
+person.CurrentColor = argument1;

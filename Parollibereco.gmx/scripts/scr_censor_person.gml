@@ -18,3 +18,7 @@ person.NumbersOfSecondsRallying = 0;*/
 
 person.speech.image_index = global.manager.censored_speech;
 person.speech.image_alpha = 1;
+
+
+person.CurrentColor = avatar.image_blend;
+person.avatar.image_blend = c_gray;

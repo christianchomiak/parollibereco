@@ -18,6 +18,7 @@
     <sprite>sprites\spr_Bubble2</sprite>
     <sprite>sprites\spr_person_mask</sprite>
     <sprite>sprites\spr_NewBubble</sprite>
+    <sprite>sprites\spr_cursor</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -48,6 +49,7 @@
     <object>objects\obj_speech</object>
     <object>objects\obj_person</object>
     <object>objects\obj_manager</object>
+    <object>objects\obj_cursor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Test1</room>

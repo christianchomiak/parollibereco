@@ -21,7 +21,7 @@ if !audio_is_playing(sfx_angry)
 }
 else
 {    
-    audio_sound_gain(global.manager.SFX, audio_sound_get_gain(global.manager.SFX) + 0.1, 0);
+    audio_sound_gain(global.manager.SFX, audio_sound_get_gain(global.manager.SFX) + 0.2, 0);
 }
 
 

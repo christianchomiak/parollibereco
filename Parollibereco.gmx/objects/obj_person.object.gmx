@@ -43,13 +43,13 @@ NumbersOfSecondsCensored = 0;
 NumbersOfSecondsRallying = 0;
 NumbersOfSecondsRebelling = 0;
 
-
 //var avatar;
 avatar = instance_create(x + (global.manager.person_width / 2), y + (global.manager.person_height), obj_avatar);
 avatar.depth = 0;
 avatar.image_speed = 0;
 avatar.image_xscale = global.manager.avatar_height / sprite_get_height(spr_avatarTest2);
 avatar.image_yscale = global.manager.avatar_height / sprite_get_height(spr_avatarTest2);
+scr_set_person_color(self.id, scr_get_random_person_color());
 
 //var bubble;
 bubble = instance_create(x + (global.manager.person_width / 2), y + (global.manager.person_height * 0.25), obj_bubble);
@@ -75,7 +75,9 @@ speech.image_speed = 0;
 speech.image_index = 0;
 speech.image_xscale = global.manager.speech_height / sprite_get_height(spr_speech); //0.8;
 speech.image_yscale = global.manager.speech_height / sprite_get_height(spr_speech); //0.8;
+scr_set_person_speech(self.id, scr_get_random_person_speech());
 
+//scr_set_person_info(self.id, person_name, person_color, person_speech);
 </string>
           </argument>
         </arguments>

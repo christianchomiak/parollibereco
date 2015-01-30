@@ -99,13 +99,16 @@ for (var r = 0; r &lt; rows; r++)
 {
     for (var c = 0; c &lt; columns; c++)
     {
-        people[r, c] = scr_create_person(0, 0, person_width, person_height, person_depth, c, r);        
+        people[r, c] = scr_create_person(0, 0, person_width, person_height, person_depth, c, r);
         
         var person_name = "P(" + string(c) + ", " + string(r) + ")";
+        scr_set_person_name(people[r, c], person_name);
+        
+        /*var person_name = "P(" + string(c) + ", " + string(r) + ")";
         var person_color = scr_get_random_person_color();
         var person_speech = scr_get_random_person_speech();
         
-        scr_set_person_info(people[r, c], person_name, person_color, person_speech);
+        scr_set_person_info(people[r, c], person_name, person_color, person_speech);*/
     }
 }
 
@@ -116,6 +119,11 @@ audio_sound_gain(BGM, 0.25, 0);
 SFX = audio_play_sound(sfx_ambience, 0.5, true);
 audio_sound_gain(SFX, 0.15, 0);
 
+cursor = instance_create(mouse_x, mouse_y, obj_cursor);
+cursor.image_xscale = 1.5; //abs(room_width * 0.0025 / sprite_get_width(cursor));
+cursor.image_yscale = cursor.image_xscale; //room_height * 0.01 / sprite_get_height(cursor);
+cursor.depth = -5;
+//cursor.image_angle = 10;
 </string>
           </argument>
         </arguments>
@@ -185,7 +193,9 @@ else if numberOfCensoredPeople &gt;= max_number_of_censorships
             var person_color = scr_get_random_person_color();
             var person_speech = scr_get_random_person_speech();
             
-            scr_set_person_info(people[r, c], person_name, person_color, person_speech);
+            //scr_set_person_info(people[r, c], person_name, person_color, person_speech);
+            scr_reset_person(people[r, c], true);
+            scr_set_person_color(people[r, c], person_color);
         }
     }
 }
