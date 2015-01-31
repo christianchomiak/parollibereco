@@ -108,7 +108,7 @@ draw_text_transformed(PersonX, PersonY, "[CREDITS]", 1.5, 1.5, 0);
 //CHRISTIAN
  
 PersonX = 0.25 * room_width;
-PersonY = 0.275 * room_height;
+PersonY = 0.225 * room_height;
 var PersonTitleY = PersonY + 0.05 * room_height;
 
 draw_text_transformed(PersonX, PersonY, "DESIGN", 1, 1, 0);
@@ -119,7 +119,7 @@ draw_text_transformed(PersonX, PersonTitleY, "Christian Chomiak, Grace Gimon", 1
 
 //GRACE
 PersonX = 0.75 * room_width;
-PersonY = 0.275 * room_height;
+PersonY = 0.225 * room_height;
 PersonTitleY = PersonY + 0.05 * room_height;
 
 draw_set_font(fnt_title);
@@ -129,12 +129,12 @@ draw_set_font(fnt_small);
 draw_text_transformed(PersonX, PersonTitleY, "Christian Chomiak", 1, 1, 0);
 
 
-draw_set_font(fnt_title);
 
 //////[2D]//////
+draw_set_font(fnt_title);
 
 PersonX = 0.25 * room_width;
-PersonY = 0.425 * room_height;
+PersonY = 0.375 * room_height;
 draw_text_transformed(PersonX, PersonY, "ARTWORK", 1, 1, 0);
 
 draw_set_font(fnt_small);
@@ -154,7 +154,7 @@ PersonX = 0.15 * room_width;
 PersonTitleY += 0.025 * room_height;
 
 credits2D = "Phil Scott#Mike Jewett#James Fenton#Cass Reese#Lemon Liu#Edward Boatman#Christopher T. Howlett#Liane Kirschner#Leonardo Schneider#Marwa Boukarim#Jens Tarning#Bradley Wilton";
-credits2D += "#Kyle Tezak#Matt Brooks#David Wong#Stephen JB Thomas";
+credits2D += "#Kyle Tezak#Matt Brooks#David Wong#Stephen JB Thomas#Guillaume Bahri";
 
 draw_text_transformed(PersonX, PersonTitleY, credits2D, 0.8, 0.8, 0);
 
@@ -163,7 +163,9 @@ draw_text_transformed(PersonX, PersonTitleY, credits2D, 0.8, 0.8, 0);
 PersonX = 0.35 * room_width;
 //PersonTitleY += PersonY + 0.1 * room_height;
 
-credits2D = "Piotrek Chuchla#Nick Abrams#Sander Leeffers#Evan MacDonald#Alex Fuller#Kyle Tezak#Chris Kerr#Pham Thi Dieu Linh#Christopher Holm-Hansen#Natalia Woodroffe#Saman Bemel-Benrud#Alex Dee#Rosemary Wannan#Melvin Poppelaars#Agarunov Oktay-Abraham"
+credits2D = "Piotrek Chuchla#Nick Abrams#Sander Leeffers#Evan MacDonald#";
+credits2D += "Alex Fuller#Kyle Tezak#Chris Kerr#Pham Thi Dieu Linh#Christopher Holm-Hansen#";
+credits2D += "Natalia Woodroffe#Saman Bemel-Benrud#Alex Dee#Rosemary Wannan#Melvin Poppelaars#Agarunov Oktay-Abraham#Jetro Cabau Quiros#useiconic.com"
 
 draw_text_transformed(PersonX, PersonTitleY, credits2D, 0.8, 0.8, 0);
 
@@ -176,7 +178,7 @@ draw_set_valign(fa_middle);
 draw_set_font(fnt_title);
 
 PersonX = 0.75 * room_width;
-PersonY = 0.425 * room_height;
+PersonY = 0.375 * room_height;
 draw_text_transformed(PersonX, PersonY, "AUDIO", 1, 1, 0);
 
 draw_set_font(fnt_small);
@@ -242,6 +244,8 @@ PersonTitleY += 0.025 * room_height;
 draw_text_transformed(PersonX, PersonTitleY, 'Taken from www.freesfx.co.uk', 0.8, 0.8, 0);
 
 
+
+draw_text_transformed(0.5 * room_width, 0.96 * room_height, '\#JeSuisCharlie', 1, 1, 0);
 </string>
           </argument>
         </arguments>

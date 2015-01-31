@@ -14,14 +14,15 @@
   <sprites name="sprites">
     <sprite>sprites\spr_avatarTest1</sprite>
     <sprite>sprites\spr_avatarTest2</sprite>
+    <sprite>sprites\spr_avatar</sprite>
     <sprite>sprites\spr_speech</sprite>
-    <sprite>sprites\spr_Bubble2</sprite>
     <sprite>sprites\spr_person_mask</sprite>
-    <sprite>sprites\spr_NewBubble</sprite>
+    <sprite>sprites\spr_bubble</sprite>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_cursor_bu</sprite>
     <sprite>sprites\spr_exit</sprite>
     <sprite>sprites\spr_menu_cursor_options</sprite>
+    <sprite>sprites\spr_mouse</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

@@ -58,8 +58,8 @@ CensoredColor = c_gray;
 bubble = instance_create(x + (global.manager.person_width / 2), y + (global.manager.person_height * 0.25), obj_bubble);
 bubble.depth = 1;
 bubble.image_speed = 0;
-bubble.image_xscale = global.manager.bubble_height / sprite_get_height(spr_Bubble2); // 0.9;
-bubble.image_yscale = global.manager.bubble_height / sprite_get_height(spr_Bubble2); // 1.1;
+bubble.image_xscale = global.manager.bubble_height / sprite_get_height(bubble.sprite_index); // 0.9;
+bubble.image_yscale = global.manager.bubble_height / sprite_get_height(bubble.sprite_index); // 1.1;
 bubble.image_alpha = 0.25;
 
 

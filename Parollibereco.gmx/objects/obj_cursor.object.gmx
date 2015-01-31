@@ -58,8 +58,8 @@ var person = instance_place(x, y, obj_person);
 if person == noone
 {
     //image_index = 3;
-    leftAlpha = 1;
-    rightAlpha = 1;
+    leftAlpha = 0;
+    rightAlpha = 0;
 }
 else if person.isInsulting
 {

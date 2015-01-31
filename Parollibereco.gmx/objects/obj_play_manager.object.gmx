@@ -31,7 +31,7 @@ global.manager = id;
 
 var BGM = audio_play_sound(bgm_air, 1, true);
 audio_sound_gain(BGM, 0.15, 0);
-audio_sound_set_track_position(BGM, 1.5);
+audio_sound_set_track_position(BGM, 3);
 
 SFX = audio_play_sound(sfx_ambience, 0.5, true);
 audio_sound_gain(SFX, 0.15, 0);
@@ -45,11 +45,15 @@ cursor.depth = -5;
 rows = 2;
 columns = 5;
 
-startingX = 0;
-startingY = 0.05 * room_height;
 
-table_width = 1 * room_width;
-table_height = 0.95 * room_height;
+var tableWidthPercentage = 0.9;
+var tableHeightPercentage = 0.95;
+
+startingX = ((1 - tableWidthPercentage) / 2) * room_width;
+startingY = (1 - tableHeightPercentage) * room_height;
+
+table_width = tableWidthPercentage * room_width;
+table_height = tableHeightPercentage * room_height;
 
 
 person_width = table_width / columns;

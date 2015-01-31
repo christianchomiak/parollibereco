@@ -30,12 +30,17 @@ image_yscale = image_xscale;
 depth = -5;
 
 w = room_width * 0.065 / sprite_get_width(spr_menu_cursor_options);
+wMouse = room_width * 0.1 / sprite_get_width(spr_mouse);
+
+mouseLifeTime = 1.5;
+mouseCurrentLifeTime = 0;
+mouseAlpha = 1;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -54,6 +59,25 @@ w = room_width * 0.065 / sprite_get_width(spr_menu_cursor_options);
             <kind>1</kind>
             <string>x = mouse_x;
 y = mouse_y;
+
+
+mouseLifeTime = 3;
+
+if mouseAlpha &gt; 0
+{
+    mouseCurrentLifeTime += scr_get_delta_time();
+    mouseAlpha = 1 - mouseCurrentLifeTime / mouseLifeTime;
+}
+else
+{
+    mouseAlpha = 0;
+}
+
+if keyboard_check_pressed(vk_space)
+{
+    mouseAlpha = 0.8;
+    mouseCurrentLifeTime = 0;
+}
 </string>
           </argument>
         </arguments>
@@ -90,7 +114,9 @@ y = mouse_y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(spr_menu_cursor_options, 0, x - (w * 150), y, w, w, 0, c_white, 0.8);
+            <string>draw_sprite_ext(spr_mouse, 1, x, y + 50, wMouse, wMouse, 0, c_white, mouseAlpha);
+
+draw_sprite_ext(spr_menu_cursor_options, 0, x - (w * 150), y, w, w, 0, c_white, 0.8);
 draw_sprite_ext(spr_menu_cursor_options, 1, x + (w * 130), y, w, w, 0, c_white, 0.8);
 </string>
           </argument>
