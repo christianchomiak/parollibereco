@@ -68,8 +68,11 @@ surface_resize(application_surface, screen_width, screen_height);
             <kind>1</kind>
             <string>///Game setup
 
-BGM = audio_play_sound(bgm_air, 1, true);
-audio_sound_gain(BGM, 0.15, 0);
+randomize();
+
+//BGM = audio_play_sound(bgm_air, 1, true);
+//audio_sound_gain(BGM, 0.15, 0);
+//audio_sound_set_track_position(BGM, 3);
 
 
 cursor = instance_create(mouse_x, mouse_y, obj_menu_cursor);
@@ -96,6 +99,72 @@ logo.depth = 0;
 logo.image_speed = 0;
 logo.image_xscale = 0.35 * room_width / sprite_get_width(spr_NewBubble);
 logo.image_yscale = logo.image_xscale;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_stop_all();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>rm_Play</room>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_draw_esc();
 </string>
           </argument>
         </arguments>
