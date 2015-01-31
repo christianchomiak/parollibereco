@@ -15,7 +15,6 @@
     <sprite>sprites\spr_avatarTest1</sprite>
     <sprite>sprites\spr_avatarTest2</sprite>
     <sprite>sprites\spr_speech</sprite>
-    <sprite>sprites\spr_speech_bu</sprite>
     <sprite>sprites\spr_Bubble2</sprite>
     <sprite>sprites\spr_person_mask</sprite>
     <sprite>sprites\spr_NewBubble</sprite>
@@ -47,24 +46,29 @@
     <script>scripts\scr_set_person_speech.gml</script>
     <script>scripts\scr_set_person_state.gml</script>
     <script>scripts\scr_draw_esc.gml</script>
+    <script>scripts\scr_setup_screen.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
+    <font>fonts\fnt_small</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_avatar</object>
     <object>objects\obj_bubble</object>
     <object>objects\obj_cursor</object>
-    <object>objects\obj_menu_cursor</object>
-    <object>objects\obj_manager</object>
-    <object>objects\obj_person</object>
-    <object>objects\obj_speech</object>
-    <object>objects\obj_main_menu</object>
     <object>objects\obj_logo</object>
+    <object>objects\obj_menu_cursor</object>
+    <object>objects\obj_credits_cursor</object>
+    <object>objects\obj_menu_manager</object>
+    <object>objects\obj_person</object>
+    <object>objects\obj_play_manager</object>
+    <object>objects\obj_speech</object>
+    <object>objects\obj_credits_manager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_MainMenu</room>
     <room>rooms\rm_Play</room>
+    <room>rooms\rm_Credits</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -27,8 +27,8 @@ if isDifferentPerson
 {
     person.MaxNumbersOfSecondsToLive = random_range(3, 10);
     person.MaxNumberOfSecondsInsulted = random_range(3, 10);
-    person.MaxNumbersOfSecondsCensored = random_range(5, 10);
-    person.MaxNumbersOfSecondsRallying = random_range(3, 10);
+    person.MaxNumbersOfSecondsCensored = random_range(10, 15);
+    person.MaxNumbersOfSecondsRallying = random_range(5, 15);
     person.MaxNumbersOfSecondsRebelling = random_range(10, 20);
     
     scr_set_person_color(person, scr_get_random_person_color());

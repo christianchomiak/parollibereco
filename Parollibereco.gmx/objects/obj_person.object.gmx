@@ -34,7 +34,7 @@ isRallying = false;
 isRebelling = false;
 
 MaxNumberOfSecondsInsulted = random_range(3, 10);
-MaxNumbersOfSecondsCensored = random_range(5, 10);
+MaxNumbersOfSecondsCensored = random_range(10, 15);
 MaxNumbersOfSecondsRallying = random_range(5, 15);
 MaxNumbersOfSecondsRebelling = random_range(10, 20);
 
