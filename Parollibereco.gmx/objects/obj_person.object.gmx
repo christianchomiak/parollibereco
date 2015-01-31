@@ -47,8 +47,8 @@ NumbersOfSecondsRebelling = 0;
 avatar = instance_create(x + (global.manager.person_width / 2), y + (global.manager.person_height), obj_avatar);
 avatar.depth = 0;
 avatar.image_speed = 0;
-avatar.image_xscale = global.manager.avatar_height / sprite_get_height(spr_avatarTest2);
-avatar.image_yscale = global.manager.avatar_height / sprite_get_height(spr_avatarTest2);
+avatar.image_xscale = global.manager.avatar_height / sprite_get_height(avatar.image_index);
+avatar.image_yscale = global.manager.avatar_height / sprite_get_height(avatar.image_index);
 //avatar.image_blend = UnselectedColor;
 
 scr_set_person_color(self.id, scr_get_random_person_color());
@@ -68,8 +68,8 @@ speech = instance_create(bubble.x, bubble.y , obj_speech); // y + (global.manage
 speech.depth = 0;
 speech.image_speed = 0;
 speech.image_index = 0;
-speech.image_xscale = global.manager.speech_height / sprite_get_height(spr_speech); //0.8;
-speech.image_yscale = global.manager.speech_height / sprite_get_height(spr_speech); //0.8;
+speech.image_xscale = global.manager.speech_height / sprite_get_height(speech.image_index); //0.8;
+speech.image_yscale = global.manager.speech_height / sprite_get_height(speech.image_index); //0.8;
 scr_set_person_speech(self.id, scr_get_random_person_speech());
 
 //scr_set_person_info(self.id, person_name, person_color, person_speech);

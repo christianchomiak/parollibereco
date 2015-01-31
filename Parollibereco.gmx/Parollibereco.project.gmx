@@ -12,8 +12,6 @@
     <sound>sound\sfx_siren</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_avatarTest1</sprite>
-    <sprite>sprites\spr_avatarTest2</sprite>
     <sprite>sprites\spr_avatar</sprite>
     <sprite>sprites\spr_speech</sprite>
     <sprite>sprites\spr_person_mask</sprite>
