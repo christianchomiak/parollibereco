@@ -5,7 +5,7 @@ Parollibereco is the *esperanto* word for "freedom of speech".
 
 ##Credits
 
-* **Game Design**: Christian Chomiak & Grace Gimon
+* **Game Design**: [Christian Chomiak](http://www.christianchomiak.com/) & Grace Gimon
 * **Programming**: Christian Chomiak
 * **Music:** taken from www.musopen.com
 * **SFXs:** taken from www.soundbible.com, www.freesound.org & www.freesfx.co.uk
